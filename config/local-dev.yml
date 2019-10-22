@@ -1,0 +1,12 @@
+app:
+    host: localhost
+    port: 3201
+database:
+    type: cockroachdb
+    host: localhost
+    port: 26257
+    username: mazongguan
+    password: T0j^W@oIcM7Gpr3v
+    database: mazongguan_dev
+    logging: true
+    synchronize: true

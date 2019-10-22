@@ -1,0 +1,37 @@
+{
+  "name": "mazongguan-goods",
+  "version": "0.0.1",
+  "description": "MaZongGuan goods microservice",
+  "main": "index.js",
+  "scripts": {
+    "build": "lerna run build",
+    "local:dev": "npm run build && cross-env NODE_ENV=local-dev node bin/start.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@marblejs/core": "^2.3.1",
+    "@marblejs/middleware-body": "^2.3.1",
+    "@marblejs/middleware-io": "^2.3.1",
+    "@marblejs/middleware-logger": "^2.3.1",
+    "chalk": "^2.4.2",
+    "lodash": "^4.17.15",
+    "pg": "^7.12.1",
+    "rxjs": "^6.5.3",
+    "typeorm": "^0.2.18",
+    "typescript": "^3.6.2",
+    "yaml": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.138",
+    "@types/node": "^12.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "cross-env": "^5.2.1",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "lerna": "^3.15.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.4"
+  }
+}

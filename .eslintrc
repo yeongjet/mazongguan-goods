@@ -1,0 +1,22 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true
+        }
+    },
+    "rules": {
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/camelcase": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/member-delimiter-style": 0,
+        "prettier/prettier": "error",
+        "indent": ["error", 4],
+        "semi": ["error", "never"],
+        "quotes": ["error", "single"]
+    },
+    "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"]
+}
