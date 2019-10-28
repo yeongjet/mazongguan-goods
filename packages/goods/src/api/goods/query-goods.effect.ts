@@ -9,9 +9,9 @@ import { GoodsModel } from '../../model'
 const validator$ = requestValidator$({
     body: t.type({
         enterprise_id: t.number,
-        batch_name: t.string,
-        code_count: t.number,
-        loss_rate: t.number,
+        goods_name: t.string,
+        intro: t.number,
+        attribute: t.number,
         label_type: t.number,
         product_id: t.number,
         extra_info: t.type({
