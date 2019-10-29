@@ -10,29 +10,35 @@ const validator$ = requestValidator$({
     body: t.type({
         enterprise_id: t.number,
         goods_name: t.string,
-        intro: t.number,
-        attribute: t.number,
-        label_type: t.number,
-        product_id: t.number,
-        extra_info: t.type({
-            export_column: t.type({
-                inside_code: t.type({
-                    code_type: t.number
-                })
+        intro: t.string,
+        attribute: t.array(
+            t.type({
+                key: t.string,
+                value: t.string
             })
-        })
+        ),
+        picture: t.array(t.string),
+        detail_picture: t.array(t.string),
+        stock: t.number,
+        price: t.number,
+        origin_price: t.number
     })
 })
 
-export const createBatch$ = EffectFactory.matchPath('/')
+export const createGoods$ = EffectFactory.matchPath('/goods')
     .matchType('POST')
     .use(req$ =>
         req$.pipe(
             use(validator$),
             mergeMap(req =>
                 of(req.body).pipe(
-                    mergeMap((goods: GoodsModel) =>
-                        from(getRepository(GoodsModel).save(goods))
+                    mergeMap(goods =>
+                        from(
+                            getRepository(GoodsModel).save({
+                                ...goods,
+                                sale: 0
+                            })
+                        )
                     ),
                     mergeMap(neverNullable),
                     map(batch => ({
@@ -46,7 +52,7 @@ export const createBatch$ = EffectFactory.matchPath('/')
                     catchError(error =>
                         throwError(
                             new HttpError(
-                                `Consumer create fail: ${error}`,
+                                `Goods create fail: ${error}`,
                                 HttpStatus.INTERNAL_SERVER_ERROR
                             )
                         )

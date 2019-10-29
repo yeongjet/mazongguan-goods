@@ -15,7 +15,10 @@ export class GoodsModel {
     intro: string
 
     @Column('string', { nullable: false, comment: '商品属性' })
-    attribute: string
+    attribute: {
+        key: string
+        value: string
+    }[]
 
     @Column('simple-array', { nullable: false, comment: '商品主图' })
     picture: string[]

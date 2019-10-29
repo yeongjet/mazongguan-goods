@@ -9,6 +9,9 @@
     },
     "publish": {
       "registry": "http://www.pastme.top:4873"
+    },
+    "bootstrap": {
+      "registry": "http://www.pastme.top:4873"
     }
   }
 }
