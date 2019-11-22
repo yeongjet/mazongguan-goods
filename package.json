@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "MaZongGuan goods microservice",
   "main": "index.js",
-  "files": [
-    "lib/"
-  ],
   "scripts": {
     "build": "lerna run build",
     "local:dev": "npm run build && cross-env NODE_ENV=local-dev node bin/start.js"

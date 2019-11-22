@@ -3,12 +3,12 @@ import { createContext, combineRoutes, httpListener } from '@marblejs/core'
 import chalk from 'chalk'
 import { bodyParser$ } from '@marblejs/middleware-body'
 import { logger$ } from '@marblejs/middleware-logger'
-import { notFound$, createBatch$ } from './api'
+import * as api from './api'
 import * as models from './model'
 
 const middlewares = [logger$(), bodyParser$()]
 
-const effects = [combineRoutes('/', [createBatch$, notFound$])]
+const effects = [combineRoutes('/', Object.values(api))]
 
 export const entities = models
 
